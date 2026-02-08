@@ -877,18 +877,18 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px 20px;
   font-size: 0.875rem;
   font-weight: 600;
-  border: 1px solid var(--gray-200);
+  border: 1px solid var(--primary);
   border-radius: 100px;
-  background: var(--white);
-  color: var(--text-secondary);
+  background: var(--primary);
+  color: var(--white);
   cursor: pointer;
   transition: all var(--transition);
 }
 
 .filter-btn.active,
 .filter-btn:hover {
-  background: var(--primary);
-  color: var(--white);
+  background: var(--white);
+  color: var(--primary);
   border-color: var(--primary);
 }
 
