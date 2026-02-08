@@ -152,6 +152,25 @@ function submitRegistration(e) {
   });
 })();
 
+// --- "Other" university toggle ---
+(function () {
+  var universitySelect = document.querySelector('#membershipForm select[required]');
+  var otherGroup = document.getElementById('otherUniversityGroup');
+  var otherInput = document.getElementById('otherUniversityInput');
+  if (!universitySelect || !otherGroup || !otherInput) return;
+
+  universitySelect.addEventListener('change', function () {
+    if (this.value === 'Other NYC University') {
+      otherGroup.style.display = '';
+      otherInput.required = true;
+    } else {
+      otherGroup.style.display = 'none';
+      otherInput.required = false;
+      otherInput.value = '';
+    }
+  });
+})();
+
 // --- Membership form submission ---
 function submitMembership(e) {
   e.preventDefault();

@@ -450,10 +450,11 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--white);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xl);
-  padding: 40px 48px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
+  padding: 40px 32px;
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .stat-item {
@@ -1671,12 +1672,8 @@ textarea.form-control {
   }
 
   .stats-bar-inner {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
     padding: 32px;
-  }
-
-  .stat-item:nth-child(2)::after {
-    display: none;
   }
 
   .features-grid,
@@ -1717,16 +1714,18 @@ textarea.form-control {
 
   .navbar-links {
     display: none;
-    position: fixed;
+    position: absolute;
     top: 72px;
     left: 0;
     right: 0;
-    bottom: 0;
+    height: calc(100vh - 72px);
     background: var(--white);
     flex-direction: column;
     padding: 24px;
-    gap: 8px;
+    gap: 4px;
     z-index: 999;
+    overflow-y: auto;
+    border-top: 1px solid var(--gray-100);
   }
 
   .navbar-links.open {
@@ -1734,8 +1733,15 @@ textarea.form-control {
   }
 
   .navbar-links a {
-    padding: 14px 18px;
+    padding: 16px 18px;
     font-size: 1.0625rem;
+    border-radius: var(--radius);
+    width: 100%;
+  }
+
+  .navbar-links a:hover,
+  .navbar-links a.active {
+    background: var(--gray-50);
   }
 
   .navbar-cta {
@@ -1756,13 +1762,8 @@ textarea.form-control {
   }
 
   .stats-bar-inner {
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    gap: 32px;
     padding: 24px;
-  }
-
-  .stat-item::after {
-    display: none !important;
   }
 
   .stat-number {
@@ -1850,7 +1851,8 @@ textarea.form-control {
   }
 
   .stats-bar-inner {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    gap: 24px;
   }
 
   .uni-logos {
